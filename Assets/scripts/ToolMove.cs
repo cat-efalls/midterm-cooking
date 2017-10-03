@@ -14,6 +14,7 @@ public class ToolMove : MonoBehaviour {
 	public GameObject carrot5;
 	public GameObject carrot6;
 	int clickCounter;
+
 	// Use this for initialization
 	void Start () {
 		startPosition = transform.position;
