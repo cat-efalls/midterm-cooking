@@ -20,20 +20,22 @@ public class RigidbodyMove : MonoBehaviour {
 
 		transform.Rotate (0f, horizontalInput * Time.deltaTime * 90f, 0f);
 		//put out input data into our "inputVector"
-		inputVector = new Vector3(0f, 0f, verticalInput);
+		inputVector = new Vector3(0f, 0f, verticalInput * -1);
 
 		//is the player moving faster than "1"? if so, normalize it
 		if (inputVector.magnitude > 1f) {
 			//prevents "faster when moving diagonally exploit
 			inputVector = Vector3.Normalize (inputVector);
 		}
+		Debug.Log ("input vector = " + inputVector);
+
 	}
 	//runs at a fixed timestep which is when physics runs
 	void FixedUpdate(){
 		//myRigidbody.AddForce (transform.TransformDirection(inputVector) * 25f); //use for things like applying thrust
 		myRigidbody.AddRelativeForce(inputVector * 25f, ForceMode.Force);  //BOTH THESE LINES OF CODE DO THE SAME THING
 
-		Debug.Log("my velocity: " + myRigidbody.velocity.ToString());
-		Debug.Log ("my speed " + myRigidbody.velocity.magnitude.ToString ());
+		//Debug.Log("my velocity: " + myRigidbody.velocity.ToString());
+		//Debug.Log ("my speed " + myRigidbody.velocity.magnitude.ToString ());
 	}
 }
