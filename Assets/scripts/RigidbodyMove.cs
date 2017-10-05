@@ -16,7 +16,7 @@ public class RigidbodyMove : MonoBehaviour {
 	void Update () {
 		float horizontalInput = Input.GetAxis ("Horizontal");
 		//get vertical input (W/S, up/down)
-		float verticalInput = - Input.GetAxis("Vertical");
+		float verticalInput = Input.GetAxis("Vertical");
 
 		transform.Rotate (0f, horizontalInput * Time.deltaTime * 90f, 0f);
 		//put out input data into our "inputVector"

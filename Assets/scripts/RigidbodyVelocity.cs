@@ -17,7 +17,7 @@ public class RigidbodyVelocity : MonoBehaviour {
 		float horizontal = Input.GetAxis ("Horizontal");//A/D, Left/Right
 		float vertical = Input.GetAxis ("Vertical");//W/S, Up/Down
 		//take our rotation into account for the inputVector
-		inputVector = (transform.right * horizontal + transform.forward * vertical) * -3;
+		inputVector = (transform.right * horizontal + transform.forward * vertical) * -1;
 
 		//normalize our vector to avoid diagonal movement exploit
 		if (inputVector.magnitude > 1f) {
