@@ -14,12 +14,14 @@ public class ToolMove : MonoBehaviour {
 	public GameObject carrot5;
 	public GameObject carrot6;
 	int clickCounter;
+	public static bool fullyChopped;
 
 	// Use this for initialization
 	void Start () {
 		startPosition = transform.position;
 		toolRigidBody = GetComponent<Rigidbody> ();
 		int clickCounter = 0;
+		fullyChopped = false;
 	}
 	
 	// Update is called once per frame
@@ -49,6 +51,7 @@ public class ToolMove : MonoBehaviour {
 		case 5:
 			carrot6.SetActive (true);
 			carrot5.SetActive (false);
+			fullyChopped = true;
 			break;
 		}
 		//if(Input.GetMouseButtonUp(0)){

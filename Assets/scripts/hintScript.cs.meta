@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: aa0d7e3217db1c04ba791d3753d00c45
+timeCreated: 1507603565
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - player: {fileID: 1347606269699528, guid: 1bdbfafdc7f53e7488da77dcf885013a, type: 2}
+  - screenText: {instanceID: 0}
+  - choppedCarrot: {fileID: 1027017141635876, guid: 8c5f798ba23ad7a4b9898fa169e5ee2a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

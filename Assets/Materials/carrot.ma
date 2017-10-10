@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: carrot.ma
-//Last modified: Thu, Oct 05, 2017 11:47:27 AM
+//Last modified: Thu, Oct 05, 2017 11:51:45 AM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,8 +13,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "57EBF9A0-46A9-8D4A-EC9E-5B8553924340";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -25.518221503066524 -1.977741117298101 -15.0259299393419 ;
-	setAttr ".r" -type "double3" 0.261647276394815 2399.7999999996282 0 ;
+	setAttr ".t" -type "double3" -27.576191158584884 8.4951216753127099 -1.1959695282611165 ;
+	setAttr ".r" -type "double3" -20.738352723606905 2428.1999999996206 -5.0888874903416268e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "517CE807-448B-485A-392A-3594C6C15E8E";
 	setAttr -k off ".v" no;
