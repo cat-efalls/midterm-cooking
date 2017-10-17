@@ -15,6 +15,7 @@ public class ToolMove : MonoBehaviour {
 	public GameObject carrot6;
 	int clickCounter;
 	public static bool fullyChopped;
+	public Animator knifeAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +29,12 @@ public class ToolMove : MonoBehaviour {
 	void Update () {
 		if( Input.GetMouseButtonDown(0)){
 			clickCounter++;
+			knifeAnimator.SetBool ("isChopping", true); //ask robert how to do this bc right now it'll start playing animation when mousebutton down but then when will it stop? is there a way to have it just play the animation once per click?
 		//	transform.position = Vector3.Lerp (transform.position, downPosition, Time.deltaTime);
 			//toolRigidBody.MovePosition(downPosition);
+		}
+		else {
+			knifeAnimator.SetBool ("isChopping", false);
 		}
 		switch (clickCounter) {
 		case 1:
