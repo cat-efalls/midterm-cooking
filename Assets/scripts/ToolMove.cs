@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //put this on the arm/tool
 //move down so many pixels or whatever when left mouse click so it looks like chop chop
 public class ToolMove : MonoBehaviour {
@@ -17,23 +18,29 @@ public class ToolMove : MonoBehaviour {
 	public static bool fullyChopped;
 	public Animator knifeAnimator;
 	public Animation knifeAnimation;
-
+	public int score;
+	public Text scoreDisplay;
 	// Use this for initialization
 	void Start () {
 		startPosition = transform.position;
 		toolRigidBody = GetComponent<Rigidbody> ();
-		int clickCounter = 0;
+		clickCounter = 0;
 		fullyChopped = false;
+		score = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		scoreDisplay.text = "" + score;
 		if( Input.GetMouseButtonDown(0)){
 			clickCounter++;
 			//knifeAnimation.Play ();
 			knifeAnimator.SetBool ("isChopping", true); //ask robert how to do this bc right now it'll start playing animation when mousebutton down but then when will it stop? is there a way to have it just play the animation once per click?
 		//	transform.position = Vector3.Lerp (transform.position, downPosition, Time.deltaTime);
 			//toolRigidBody.MovePosition(downPosition);
+			if(!AudioScript.toreadorOn){
+				score += 50;
+			}
 		}
 		else {
 			knifeAnimator.SetBool ("isChopping", false);
